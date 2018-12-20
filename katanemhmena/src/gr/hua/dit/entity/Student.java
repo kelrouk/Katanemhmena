@@ -40,6 +40,10 @@ public class Student {
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
 	@JoinColumn(name = "form_id")
 	private Form form;
+	
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "acc_id")
+	private Accommodation accomodation;
 
 	public Student() {
 		// TODO Auto-generated constructor stub
@@ -83,6 +87,13 @@ public class Student {
 
 	public void setDep(Departement dep) {
 		this.dep = dep;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [student_id=" + student_id + ", town=" + town + ", date_of_birth=" + date_of_birth
+				+ ", year_of_enrollment=" + year_of_enrollment + ", dep=" + dep + ", points=" + points + ", form="
+				+ form + "]";
 	}
 
 }

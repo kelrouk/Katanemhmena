@@ -43,4 +43,10 @@ public class Check {
 		this.is_approved = is_approved;
 	}
 
+	@Override
+	public String toString() {
+		return "Check [check_id=" + check_id + ", is_approved=" + is_approved + ", employee=" + employee + ", form="
+				+ form + "]";
+	}
+
 }

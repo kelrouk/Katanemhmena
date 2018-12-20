@@ -15,7 +15,7 @@ public class Points {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "point_id")
+	@Column(name = "points_id")
 	private int points;
 
 	@OneToOne(mappedBy = "points", cascade = CascadeType.ALL)
@@ -32,6 +32,11 @@ public class Points {
 
 	public void setPoints(int points) {
 		this.points = points;
+	}
+
+	@Override
+	public String toString() {
+		return "Points [points=" + points + ", student=" + student + "]";
 	}
 
 }

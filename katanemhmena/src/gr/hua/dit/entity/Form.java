@@ -16,8 +16,8 @@ public class Form {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "point_id")
-	private int point_id;
+	@Column(name = "form_id")
+	private int form_id;
 
 	@Column(name = "income")
 	private double income;
@@ -74,6 +74,13 @@ public class Form {
 
 	public void setBro_sis(int bro_sis) {
 		this.bro_sis = bro_sis;
+	}
+
+	@Override
+	public String toString() {
+		return "Form [point_id=" + form_id + ", income=" + income + ", unemp_parents=" + unemp_parents
+				+ ", familly_income=" + familly_income + ", bro_sis=" + bro_sis + ", student=" + student + ", check="
+				+ check + "]";
 	}
 
 }

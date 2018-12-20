@@ -20,4 +20,9 @@ public class Admin extends InternalUser {
 		super();
 	}
 
+	@Override
+	public String toString() {
+		return "Admin [admin_id=" + admin_id + "]";
+	}
+
 }

@@ -30,7 +30,7 @@ public class Departement {
 	@OneToOne(mappedBy = "empDep", cascade = CascadeType.ALL)
 	private Employee employee;
 
-	@OneToMany(mappedBy = "departement")
+	@OneToMany(mappedBy = "stddepartement")
 	private List<Student> students;
 
 	public Departement() {
@@ -52,6 +52,12 @@ public class Departement {
 
 	public void setLimit(int limit) {
 		this.limit = limit;
+	}
+
+	@Override
+	public String toString() {
+		return "Departement [dep_id=" + dep_id + ", limit=" + limit + ", dep_name=" + dep_name + ", employee="
+				+ employee + ", students=" + students + "]";
 	}
 
 }

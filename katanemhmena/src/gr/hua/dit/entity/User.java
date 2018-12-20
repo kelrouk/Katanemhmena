@@ -58,4 +58,10 @@ public class User {
 		this.am = am;
 	}
 
+	@Override
+	public String toString() {
+		return "User [first_name=" + first_name + ", last_name=" + last_name + ", email=" + email + ", role=" + role
+				+ ", am=" + am + "]";
+	}
+
 }
