@@ -1,10 +1,43 @@
 package gr.hua.dit.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "form")
 public class Form {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "point_id")
+	private int point_id;
+
+	@Column(name = "income")
 	private double income;
+
+	@Column(name = "unemp_parents")
 	private int unemp_parents;
+
+	@Column(name = "familly_income")
 	private double familly_income;
+
+	@Column(name = "bro_sis")
 	private int bro_sis;
+
+	@OneToOne(mappedBy = "form", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+			CascadeType.REFRESH })
+	private Student student;
+
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "check_id")
+	private Check check;
 
 	public Form() {
 		super();

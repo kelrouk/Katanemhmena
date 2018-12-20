@@ -37,6 +37,10 @@ public class Student {
 	@JoinColumn(name = "points_id")
 	private Points points;
 
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "form_id")
+	private Form form;
+
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
