@@ -31,11 +31,34 @@ public class Form {
 	@Column(name = "bro_sis")
 	private int bro_sis;
 
-	@OneToOne(mappedBy = "form", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH })
+	public int getForm_id() {
+		return form_id;
+	}
+
+	public void setForm_id(int form_id) {
+		this.form_id = form_id;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public Check getCheck() {
+		return check;
+	}
+
+	public void setCheck(Check check) {
+		this.check = check;
+	}
+
+	@OneToOne(mappedBy = "form", cascade = { CascadeType.ALL })
 	private Student student;
 
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "check_id")
 	private Check check;
 

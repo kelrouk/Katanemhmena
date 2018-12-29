@@ -1,7 +1,9 @@
 package gr.hua.dit.entity;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public class User {
 	@Column(name = "first_name")
 	private String first_name;

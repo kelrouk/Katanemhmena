@@ -55,7 +55,7 @@
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
 		<property name="packagesToScan"
-			value="gr.hua.dit.springmvc1.entity" />
+			value="gr.hua.dit.entity" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

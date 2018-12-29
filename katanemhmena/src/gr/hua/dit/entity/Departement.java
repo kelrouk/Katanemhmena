@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "departement")
+@Table(name = "deps")
 public class Departement {
 
 	@Id
@@ -21,21 +21,29 @@ public class Departement {
 	@Column(name = "dep_id")
 	private int dep_id;
 
-	@Column(name = "limit")
-	private int limit;
+	@Column(name = "dep_limit")
+	private int dep_limit;
 
 	@Column(name = "dep_name")
 	private String dep_name;
 
-	@OneToOne(mappedBy = "empDep", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "departement", cascade = CascadeType.ALL)
 	private Employee employee;
 
-	@OneToMany(mappedBy = "stddepartement")
+	@OneToMany(mappedBy = "dep")
 	private List<Student> students;
 
 	public Departement() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getLimit() {
+		return dep_limit;
+	}
+
+	public void setLimit(int limit) {
+		this.dep_limit = limit;
 	}
 
 	public String getDep_name() {
@@ -46,17 +54,9 @@ public class Departement {
 		this.dep_name = dep_name;
 	}
 
-	public int getLimit() {
-		return limit;
-	}
-
-	public void setLimit(int limit) {
-		this.limit = limit;
-	}
-
 	@Override
 	public String toString() {
-		return "Departement [dep_id=" + dep_id + ", limit=" + limit + ", dep_name=" + dep_name + ", employee="
+		return "Departement [dep_id=" + dep_id + ", limit=" + dep_limit + ", dep_name=" + dep_name + ", employee="
 				+ employee + ", students=" + students + "]";
 	}
 

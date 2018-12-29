@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "admin")
+
 public class Admin extends InternalUser {
 
 	@Id
@@ -17,12 +18,11 @@ public class Admin extends InternalUser {
 	private int admin_id;
 
 	public Admin() {
-		super();
 	}
 
 	@Override
 	public String toString() {
-		return "Admin [admin_id=" + admin_id + "]";
+		return "Admin [admin_id=" + admin_id + "]" + super.toString();
 	}
 
 }

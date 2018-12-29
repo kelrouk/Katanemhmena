@@ -21,7 +21,7 @@ public class Accommodation {
 	@Column(name = "has_acc")
 	private boolean has_acc;
 
-	@OneToOne(mappedBy = "accommodation", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+	@OneToOne(mappedBy = "accomodation", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
 			CascadeType.REFRESH })
 	private Student student;
 

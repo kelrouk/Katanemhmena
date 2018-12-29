@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student extends User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,20 +29,20 @@ public class Student {
 	@Column(name = "year_of_enrollment")
 	private int year_of_enrollment;
 
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "dep_id")
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "std_dep_id")
 	private Departement dep;
 
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "points_id")
+	@JoinColumn(name = "std_points_id")
 	private Points points;
 
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "form_id")
+	@JoinColumn(name = "std_form_id")
 	private Form form;
-	
+
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "acc_id")
+	@JoinColumn(name = "std_acc_id")
 	private Accommodation accomodation;
 
 	public Student() {
